@@ -53,6 +53,10 @@
             "shortcut": ""
           }
         ],
+        "validate": {
+          "required": true,
+          "minSelectedCount": 1
+        },
         "key": "cpu",
         "type": "selectboxes",
         "input": true,
@@ -75,6 +79,7 @@
                 "labelPosition": "left-left",
                 "suffix": "Гб",
                 "tableView": false,
+                "defaultValue": 16,
                 "delimiter": false,
                 "requireDecimal": false,
                 "truncateMultipleSpaces": false,
@@ -86,8 +91,7 @@
                 "type": "number",
                 "labelWidth": 0,
                 "labelMargin": 3,
-                "input": true,
-                "defaultValue": 16
+                "input": true
               }
             ],
             "width": 6,
@@ -173,6 +177,7 @@
                         "labelPosition": "left-left",
                         "suffix": "Гб",
                         "tableView": false,
+                        "defaultValue": 256,
                         "delimiter": false,
                         "requireDecimal": false,
                         "truncateMultipleSpaces": false,
@@ -184,8 +189,7 @@
                         "type": "number",
                         "labelWidth": 0,
                         "labelMargin": 3,
-                        "input": true,
-                        "defaultValue": 256
+                        "input": true
                       }
                     ],
                     "width": 6,
@@ -362,7 +366,7 @@
                 "labelPosition": "left-left",
                 "suffix": "кг",
                 "tableView": false,
-                "defaultValue": 1,
+                "defaultValue": 1.2,
                 "delimiter": false,
                 "requireDecimal": false,
                 "truncateMultipleSpaces": false,
@@ -373,7 +377,8 @@
                 "type": "number",
                 "labelWidth": 0,
                 "labelMargin": 3,
-                "input": true
+                "input": true,
+                "decimalLimit": 1
               }
             ],
             "width": 6,
@@ -390,6 +395,7 @@
                 "labelPosition": "left-left",
                 "suffix": "кг",
                 "tableView": false,
+                "defaultValue": 3.5,
                 "delimiter": false,
                 "requireDecimal": false,
                 "truncateMultipleSpaces": false,
@@ -417,8 +423,8 @@
                 ],
                 "type": "number",
                 "labelWidth": 1,
-                "input": true,
-                "defaultValue": 3
+                "decimalLimit": 1,
+                "input": true
               }
             ],
             "width": 6,
@@ -457,7 +463,8 @@
                 "requireDecimal": false,
                 "truncateMultipleSpaces": false,
                 "validate": {
-                  "min": 0
+                  "min": 0,
+                  "integer": true
                 },
                 "key": "battery_from",
                 "type": "number",
@@ -485,7 +492,8 @@
                 "requireDecimal": false,
                 "truncateMultipleSpaces": false,
                 "validate": {
-                  "min": 0
+                  "min": 0,
+                  "integer": true
                 },
                 "key": "battery_to",
                 "customConditional": "show = value > data.ram_from",
@@ -527,13 +535,14 @@
       },
       {
         "label": "Начать поиск",
+        "action": "event",
         "showValidations": false,
         "disableOnInvalid": true,
         "tableView": false,
         "key": "submit",
         "type": "button",
         "input": true,
-        "saveOnEnter": false
+        "event": "search_event"
       }
     ]
   }

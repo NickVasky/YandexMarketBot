@@ -1,0 +1,565 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="SetFilters" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.Collections;assembly=System.Private.CoreLib" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:y="clr-namespace:YandexMarketBot;assembly=YandexMarketBot.Core">
+  <x:Members>
+    <x:Property Name="in_marketFilters" Type="InArgument(y:MarketFilters)" />
+  </x:Members>
+  <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
+  <sap:VirtualizedContainerService.HintSize>1234,5665</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Text</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>YandexMarketBot</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Services.RuntimeAnalyze</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>System.Numerics</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.CSharp</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>Microsoft.Extensions.DependencyModel</AssemblyReference>
+      <AssemblyReference>YandexMarketBot.Core</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="SetFilters" sap:VirtualizedContainerService.HintSize="862,5600" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Все фильтры — Ноутбуки — выбор по параметрам на Яндекс Маркете" sap:VirtualizedContainerService.HintSize="800,5512" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="138ad43b-8eb9-4ba3-9a4f-60136bf91c8e" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="766,5272" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Все фильтры'" sap:VirtualizedContainerService.HintSize="704,225" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="138ad43b-8eb9-4ba3-9a4f-60136bf91c8e" Version="V4">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://market.yandex.ru/catalog--noutbuki/26895412/list?hid=91013&amp;rs=eJxdzTFLw0AYxvFeKJKegyl0CCnKKzpky92bs_VWRyfRD3Cc58UEog1Nsgp-gzoJ3YV2cfUjuLgKTq5-DUOIFDs__x8POhfkbOnQQ-q6xAN_CENvJ9i7sYmu80pxVehbi9ALe3TcJRRokwz-krgdJ-147Peh73kBGF3WOldGz2d1aXOFKqvsXalKq-cmVQjrr0H48phS0bpdfwSjxh1su_ifg7dnGq7frzrl-gEEjdq_1mVmNqjIdXa_uVp8P4SfPytCsVVHPgHSqPH2F---qlkBq480fHpdEM85dxNpRGKNvUQ-xYmIhZQnnMsoxmSKTDJhuGTMIrNaSJOcokVkE8YiHvFfkCBfmA%2C%2C&amp;qrfrom=4" CVScreenId="dcd97b53-510d-4b7b-9eef-09d5efc872c7" DesignTimeRectangle="232, 539, 290, 40" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;webctrl parentid='/content/page/fancyPage/allFiltersEntrypoint' tag='BUTTON' type='button' /&gt;" Guid="aa3b6e8d-8bca-4844-af27-8a18f16bc5a3" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Ноутбуки — купить по низкой цене на Яндекс Маркете' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <uix:Target CVScreenId="dcd97b53-510d-4b7b-9eef-09d5efc872c7" CvElementArea="229, 537, 295, 43" CvTextArea="336, 551, 81, 16" CvTextArgument="Bce ownbTpbl" CvType="Button" DesignTimeRectangle="337, 551, 80, 16" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Все фильтры' parentid='/content/page/fancyPage/allFiltersEntrypoint' tag='SPAN' type='' class='_1_C0_ _1n-yE _16wT_ _1Dmnq' check:innerText='Все фильтры' /&gt;" Guid="ac745c6b-78e9-4bb4-a8f6-9326787db8a6" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <Sequence DisplayName="CPU" sap:VirtualizedContainerService.HintSize="704,2083" sap2010:WorkflowViewState.IdRef="Sequence_3">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="cpuCheckboxes" />
+              </Sequence.Variables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="642,175" sap2010:WorkflowViewState.IdRef="LogMessage_2">
+                <ui:LogMessage.Message>
+                  <InArgument x:TypeArguments="x:Object">
+                    <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_8">"Applying CPU Filters..."</CSharpValue>
+                  </InArgument>
+                </ui:LogMessage.Message>
+              </ui:LogMessage>
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Линейка процессора' - Show" sap:VirtualizedContainerService.HintSize="642,225" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="138ad43b-8eb9-4ba3-9a4f-60136bf91c8e" Version="V4">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="https://market.yandex.ru/catalog--noutbuki/26895412/filters?hid=91013&amp;qrfrom=4&amp;local-offers-first=0" CVScreenId="1a92e366-af19-4e67-8d73-d120b03be8ad" DesignTimeRectangle="57, 547, 261, 36" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Линейка процессора' tag='BUTTON' /&gt;" Guid="25e3d63b-4c31-4b4a-9458-5e6a6944ff11" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Все фильтры — Ноутбуки — выбор по параметрам на Яндекс Маркете' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                        <uix:Target CVScreenId="1a92e366-af19-4e67-8d73-d120b03be8ad" CvElementArea="68, 556, 21, 19" CvTextArea="94, 558, 127, 15" CvTextArgument="nnheñka npoueccopa" CvType="ArrowButton" DesignTimeRectangle="69, 557, 152, 18" ElementType="Button" FuzzySelectorArgument="&lt;webctrl aaname='Линейка процессора' tag='BUTTON' type='' class='_1RgR0 _2k6P8' check:innerText='Линейка процессора' /&gt;" Guid="194ffa65-d242-4e01-bd3a-27468ff5b07b" SearchSteps="FuzzySelector, CV" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NClick.Target>
+                <uix:NClick.VerifyOptions>
+                  <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                    <uix:VerifyExecutionOptions.Retry>
+                      <InArgument x:TypeArguments="x:Boolean" />
+                    </uix:VerifyExecutionOptions.Retry>
+                    <uix:VerifyExecutionOptions.Timeout>
+                      <InArgument x:TypeArguments="x:Double" />
+                    </uix:VerifyExecutionOptions.Timeout>
+                  </uix:VerifyExecutionOptions>
+                </uix:NClick.VerifyOptions>
+              </uix:NClick>
+              <ui:FindChildren DisplayName="Find Children - CPU Container" Filter="&lt;webctrl tag='input' type='checkbox'/&gt;" sap:VirtualizedContainerService.HintSize="642,119" sap2010:WorkflowViewState.IdRef="FindChildren_1" Scope="FIND_DESCENDANTS">
+                <ui:FindChildren.Children>
+                  <OutArgument x:TypeArguments="scg:IEnumerable(ui:UiElement)">
+                    <CSharpReference x:TypeArguments="scg:IEnumerable(ui:UiElement)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_1">cpuCheckboxes</CSharpReference>
+                  </OutArgument>
+                </ui:FindChildren.Children>
+                <ui:FindChildren.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4e5158ab-aa2b-4a7e-a209-70548c9de78b" Selector="&lt;webctrl aaname='Линейка процессора' tag='BUTTON' /&gt;&lt;nav up='1' /&gt;&lt;webctrl tag='DIV' data-auto='accordion-content' /&gt;">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ui:FindChildren.Target>
+              </ui:FindChildren>
+              <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each - Target CPU" sap:VirtualizedContainerService.HintSize="642,1226" sap2010:WorkflowViewState.IdRef="ForEach`1_1">
+                <ui:ForEach.Body>
+                  <ActivityAction x:TypeArguments="x:String">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="x:String" Name="currentCpu" />
+                    </ActivityAction.Argument>
+                    <Sequence DisplayName="Body - Outer" sap:VirtualizedContainerService.HintSize="608,1080" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="{x:Null}" DisplayName="For Each - CPU Checkbox" sap:VirtualizedContainerService.HintSize="546,992" sap2010:WorkflowViewState.IdRef="ForEach`1_2">
+                        <ui:ForEach.Body>
+                          <ActivityAction x:TypeArguments="ui:UiElement">
+                            <ActivityAction.Argument>
+                              <DelegateInArgument x:TypeArguments="ui:UiElement" Name="currentCheckbox" />
+                            </ActivityAction.Argument>
+                            <Sequence DisplayName="Body - Inner" sap:VirtualizedContainerService.HintSize="512,855" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                              <Sequence.Variables>
+                                <Variable x:TypeArguments="x:String" Name="checkboxText" />
+                              </Sequence.Variables>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="value" DisplayName="Get Attribute - Text" sap:VirtualizedContainerService.HintSize="450,219" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_1" Version="V4">
+                                <uix:NGetAttributeGeneric.InUiElement>
+                                  <InArgument x:TypeArguments="ui:UiElement">
+                                    <CSharpValue x:TypeArguments="ui:UiElement" sap2010:WorkflowViewState.IdRef="CSharpValue`1_4">currentCheckbox</CSharpValue>
+                                  </InArgument>
+                                </uix:NGetAttributeGeneric.InUiElement>
+                                <uix:NGetAttributeGeneric.Result>
+                                  <OutArgument x:TypeArguments="x:String">
+                                    <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_2">checkboxText</CSharpReference>
+                                  </OutArgument>
+                                </uix:NGetAttributeGeneric.Result>
+                              </uix:NGetAttributeGeneric>
+                              <If DisplayName="If - CPU Checkbox should be set" sap:VirtualizedContainerService.HintSize="450,548" sap2010:WorkflowViewState.IdRef="If_1">
+                                <If.Condition>
+                                  <InArgument x:TypeArguments="x:Boolean">
+                                    <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_5">checkboxText.ToLower().StartsWith(currentCpu)</CSharpValue>
+                                  </InArgument>
+                                </If.Condition>
+                                <If.Then>
+                                  <Sequence DisplayName="Then - Check" sap:VirtualizedContainerService.HintSize="416,284" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click - Checkbox" sap:VirtualizedContainerService.HintSize="354,196" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" Version="V4">
+                                      <uix:NClick.InUiElement>
+                                        <InArgument x:TypeArguments="ui:UiElement">
+                                          <CSharpValue x:TypeArguments="ui:UiElement" sap2010:WorkflowViewState.IdRef="CSharpValue`1_6">currentCheckbox</CSharpValue>
+                                        </InArgument>
+                                      </uix:NClick.InUiElement>
+                                      <uix:NClick.VerifyOptions>
+                                        <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                          <uix:VerifyExecutionOptions.Retry>
+                                            <InArgument x:TypeArguments="x:Boolean" />
+                                          </uix:VerifyExecutionOptions.Retry>
+                                          <uix:VerifyExecutionOptions.Timeout>
+                                            <InArgument x:TypeArguments="x:Double" />
+                                          </uix:VerifyExecutionOptions.Timeout>
+                                        </uix:VerifyExecutionOptions>
+                                      </uix:NClick.VerifyOptions>
+                                    </uix:NClick>
+                                  </Sequence>
+                                </If.Then>
+                                <If.Else>
+                                  <Sequence DisplayName="Else - Skip" sap:VirtualizedContainerService.HintSize="416,103" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </Sequence>
+                                </If.Else>
+                              </If>
+                            </Sequence>
+                          </ActivityAction>
+                        </ui:ForEach.Body>
+                        <ui:ForEach.Values>
+                          <InArgument x:TypeArguments="sc:IEnumerable">
+                            <CSharpValue x:TypeArguments="sc:IEnumerable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_3">cpuCheckboxes</CSharpValue>
+                          </InArgument>
+                        </ui:ForEach.Values>
+                      </ui:ForEach>
+                    </Sequence>
+                  </ActivityAction>
+                </ui:ForEach.Body>
+                <ui:ForEach.Values>
+                  <InArgument x:TypeArguments="sc:IEnumerable">
+                    <CSharpValue x:TypeArguments="sc:IEnumerable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_2">in_marketFilters.cpu</CSharpValue>
+                  </InArgument>
+                </ui:ForEach.Values>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:ForEach>
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Линейка процессора' - Hide" sap:VirtualizedContainerService.HintSize="642,218" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="138ad43b-8eb9-4ba3-9a4f-60136bf91c8e" Version="V4">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="https://market.yandex.ru/catalog--noutbuki/26895412/filters?hid=91013&amp;qrfrom=4&amp;local-offers-first=0" CVScreenId="1a92e366-af19-4e67-8d73-d120b03be8ad" DesignTimeRectangle="57, 547, 261, 36" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Линейка процессора' tag='BUTTON' /&gt;" Guid="25e3d63b-4c31-4b4a-9458-5e6a6944ff11" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Все фильтры — Ноутбуки — выбор по параметрам на Яндекс Маркете' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                        <uix:Target CVScreenId="1a92e366-af19-4e67-8d73-d120b03be8ad" CvElementArea="68, 556, 21, 19" CvTextArea="94, 558, 127, 15" CvTextArgument="nnheñka npoueccopa" CvType="ArrowButton" DesignTimeRectangle="69, 557, 152, 18" ElementType="Button" FuzzySelectorArgument="&lt;webctrl aaname='Линейка процессора' tag='BUTTON' type='' class='_1RgR0 _2k6P8' check:innerText='Линейка процессора' /&gt;" Guid="194ffa65-d242-4e01-bd3a-27468ff5b07b" SearchSteps="FuzzySelector, CV" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NClick.Target>
+                <uix:NClick.VerifyOptions>
+                  <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                    <uix:VerifyExecutionOptions.Retry>
+                      <InArgument x:TypeArguments="x:Boolean" />
+                    </uix:VerifyExecutionOptions.Retry>
+                    <uix:VerifyExecutionOptions.Timeout>
+                      <InArgument x:TypeArguments="x:Double" />
+                    </uix:VerifyExecutionOptions.Timeout>
+                  </uix:VerifyExecutionOptions>
+                </uix:NClick.VerifyOptions>
+              </uix:NClick>
+            </Sequence>
+            <Sequence DisplayName="RAM" sap:VirtualizedContainerService.HintSize="704,2202" sap2010:WorkflowViewState.IdRef="Sequence_13">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="cpuCheckboxes" />
+                <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="ramCheckboxes" />
+              </Sequence.Variables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="568,175" sap2010:WorkflowViewState.IdRef="LogMessage_3">
+                <ui:LogMessage.Message>
+                  <InArgument x:TypeArguments="x:Object">
+                    <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_9">"Applying RAM Filters..."</CSharpValue>
+                  </InArgument>
+                </ui:LogMessage.Message>
+              </ui:LogMessage>
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Оперативная память' - Show" sap:VirtualizedContainerService.HintSize="568,225" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="138ad43b-8eb9-4ba3-9a4f-60136bf91c8e" Version="V4">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="https://market.yandex.ru/catalog--noutbuki/26895412/filters?hid=91013&amp;qrfrom=4&amp;local-offers-first=0" CVScreenId="1a92e366-af19-4e67-8d73-d120b03be8ad" DesignTimeRectangle="57, 547, 261, 36" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Оперативная память' tag='BUTTON' /&gt;" Guid="25e3d63b-4c31-4b4a-9458-5e6a6944ff11" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Все фильтры — Ноутбуки — выбор по параметрам на Яндекс Маркете' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                        <uix:Target CVScreenId="1a92e366-af19-4e67-8d73-d120b03be8ad" CvElementArea="68, 556, 21, 19" CvTextArea="94, 558, 127, 15" CvTextArgument="nnheñka npoueccopa" CvType="ArrowButton" DesignTimeRectangle="69, 557, 152, 18" ElementType="Button" FuzzySelectorArgument="&lt;webctrl aaname='Линейка процессора' tag='BUTTON' type='' class='_1RgR0 _2k6P8' check:innerText='Линейка процессора' /&gt;" Guid="194ffa65-d242-4e01-bd3a-27468ff5b07b" SearchSteps="FuzzySelector, CV" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NClick.Target>
+                <uix:NClick.VerifyOptions>
+                  <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                    <uix:VerifyExecutionOptions.Retry>
+                      <InArgument x:TypeArguments="x:Boolean" />
+                    </uix:VerifyExecutionOptions.Retry>
+                    <uix:VerifyExecutionOptions.Timeout>
+                      <InArgument x:TypeArguments="x:Double" />
+                    </uix:VerifyExecutionOptions.Timeout>
+                  </uix:VerifyExecutionOptions>
+                </uix:NClick.VerifyOptions>
+              </uix:NClick>
+              <ui:FindChildren DisplayName="Find Children - RAM Container" Filter="&lt;webctrl tag='input' type='checkbox'/&gt;" sap:VirtualizedContainerService.HintSize="568,119" sap2010:WorkflowViewState.IdRef="FindChildren_3" Scope="FIND_DESCENDANTS">
+                <ui:FindChildren.Children>
+                  <OutArgument x:TypeArguments="scg:IEnumerable(ui:UiElement)">
+                    <CSharpReference x:TypeArguments="scg:IEnumerable(ui:UiElement)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_3">ramCheckboxes</CSharpReference>
+                  </OutArgument>
+                </ui:FindChildren.Children>
+                <ui:FindChildren.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4e5158ab-aa2b-4a7e-a209-70548c9de78b" Selector="&lt;webctrl aaname='Оперативная память' tag='BUTTON' /&gt;&lt;nav up='1' /&gt;&lt;webctrl tag='DIV' data-auto='accordion-content' /&gt;">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ui:FindChildren.Target>
+              </ui:FindChildren>
+              <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="{x:Null}" DisplayName="For Each - RAM Checkbox" sap:VirtualizedContainerService.HintSize="568,1343" sap2010:WorkflowViewState.IdRef="ForEach`1_4">
+                <ui:ForEach.Body>
+                  <ActivityAction x:TypeArguments="ui:UiElement">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="ui:UiElement" Name="currentCheckbox" />
+                    </ActivityAction.Argument>
+                    <Sequence DisplayName="Body - Inner" sap:VirtualizedContainerService.HintSize="534,1197" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                      <Sequence.Variables>
+                        <Variable x:TypeArguments="x:String" Name="checkboxText" />
+                        <Variable x:TypeArguments="x:Int32" Name="ramValue" />
+                      </Sequence.Variables>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="value" DisplayName="Get Attribute - Text" sap:VirtualizedContainerService.HintSize="472,219" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_2" Version="V4">
+                        <uix:NGetAttributeGeneric.InUiElement>
+                          <InArgument x:TypeArguments="ui:UiElement">
+                            <CSharpValue x:TypeArguments="ui:UiElement" sap2010:WorkflowViewState.IdRef="CSharpValue`1_11">currentCheckbox</CSharpValue>
+                          </InArgument>
+                        </uix:NGetAttributeGeneric.InUiElement>
+                        <uix:NGetAttributeGeneric.Result>
+                          <OutArgument x:TypeArguments="x:String">
+                            <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_4">checkboxText</CSharpReference>
+                          </OutArgument>
+                        </uix:NGetAttributeGeneric.Result>
+                      </uix:NGetAttributeGeneric>
+                      <TryCatch DisplayName="Try Catch - Parse RAM Value" sap:VirtualizedContainerService.HintSize="472,342" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                        <TryCatch.Try>
+                          <Assign DisplayName="Parse RAM value" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_1">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:Int32">
+                                <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_6">ramValue</CSharpReference>
+                              </OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:Int32">
+                                <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_15">Convert.ToInt32(checkboxText.Replace("ГБ", "").Trim())</CSharpValue>
+                              </InArgument>
+                            </Assign.Value>
+                          </Assign>
+                        </TryCatch.Try>
+                        <TryCatch.Catches>
+                          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="438,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ActivityAction x:TypeArguments="s:Exception">
+                              <ActivityAction.Argument>
+                                <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                              </ActivityAction.Argument>
+                              <ui:Continue sap:VirtualizedContainerService.HintSize="334,25" sap2010:WorkflowViewState.IdRef="Continue_1" />
+                            </ActivityAction>
+                          </Catch>
+                        </TryCatch.Catches>
+                      </TryCatch>
+                      <If DisplayName="If - RAM Checkbox should be set" sap:VirtualizedContainerService.HintSize="472,548" sap2010:WorkflowViewState.IdRef="If_2">
+                        <If.Condition>
+                          <InArgument x:TypeArguments="x:Boolean">
+                            <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_16">in_marketFilters.ram.IsInside(ramValue)</CSharpValue>
+                          </InArgument>
+                        </If.Condition>
+                        <If.Then>
+                          <Sequence DisplayName="Then - Check" sap:VirtualizedContainerService.HintSize="416,284" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click - Checkbox" sap:VirtualizedContainerService.HintSize="354,196" sap2010:WorkflowViewState.IdRef="NClick_7" KeyModifiers="None" MouseButton="Left" Version="V4">
+                              <uix:NClick.InUiElement>
+                                <InArgument x:TypeArguments="ui:UiElement">
+                                  <CSharpValue x:TypeArguments="ui:UiElement" sap2010:WorkflowViewState.IdRef="CSharpValue`1_13">currentCheckbox</CSharpValue>
+                                </InArgument>
+                              </uix:NClick.InUiElement>
+                              <uix:NClick.VerifyOptions>
+                                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                  <uix:VerifyExecutionOptions.Retry>
+                                    <InArgument x:TypeArguments="x:Boolean" />
+                                  </uix:VerifyExecutionOptions.Retry>
+                                  <uix:VerifyExecutionOptions.Timeout>
+                                    <InArgument x:TypeArguments="x:Double" />
+                                  </uix:VerifyExecutionOptions.Timeout>
+                                </uix:VerifyExecutionOptions>
+                              </uix:NClick.VerifyOptions>
+                            </uix:NClick>
+                          </Sequence>
+                        </If.Then>
+                        <If.Else>
+                          <Sequence DisplayName="Else - Skip" sap:VirtualizedContainerService.HintSize="416,103" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </Sequence>
+                        </If.Else>
+                      </If>
+                    </Sequence>
+                  </ActivityAction>
+                </ui:ForEach.Body>
+                <ui:ForEach.Values>
+                  <InArgument x:TypeArguments="sc:IEnumerable">
+                    <CSharpValue x:TypeArguments="sc:IEnumerable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_10">ramCheckboxes</CSharpValue>
+                  </InArgument>
+                </ui:ForEach.Values>
+              </ui:ForEach>
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Оперативная память' - Hide" sap:VirtualizedContainerService.HintSize="568,218" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="138ad43b-8eb9-4ba3-9a4f-60136bf91c8e" Version="V4">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="https://market.yandex.ru/catalog--noutbuki/26895412/filters?hid=91013&amp;qrfrom=4&amp;local-offers-first=0" CVScreenId="1a92e366-af19-4e67-8d73-d120b03be8ad" DesignTimeRectangle="57, 547, 261, 36" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Оперативная память' tag='BUTTON' /&gt;" Guid="25e3d63b-4c31-4b4a-9458-5e6a6944ff11" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Все фильтры — Ноутбуки — выбор по параметрам на Яндекс Маркете' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                        <uix:Target CVScreenId="1a92e366-af19-4e67-8d73-d120b03be8ad" CvElementArea="68, 556, 21, 19" CvTextArea="94, 558, 127, 15" CvTextArgument="nnheñka npoueccopa" CvType="ArrowButton" DesignTimeRectangle="69, 557, 152, 18" ElementType="Button" FuzzySelectorArgument="&lt;webctrl aaname='Линейка процессора' tag='BUTTON' type='' class='_1RgR0 _2k6P8' check:innerText='Линейка процессора' /&gt;" Guid="194ffa65-d242-4e01-bd3a-27468ff5b07b" SearchSteps="FuzzySelector, CV" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NClick.Target>
+                <uix:NClick.VerifyOptions>
+                  <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                    <uix:VerifyExecutionOptions.Retry>
+                      <InArgument x:TypeArguments="x:Boolean" />
+                    </uix:VerifyExecutionOptions.Retry>
+                    <uix:VerifyExecutionOptions.Timeout>
+                      <InArgument x:TypeArguments="x:Double" />
+                    </uix:VerifyExecutionOptions.Timeout>
+                  </uix:VerifyExecutionOptions>
+                </uix:NClick.VerifyOptions>
+              </uix:NClick>
+            </Sequence>
+            <Sequence DisplayName="RAM" sap:VirtualizedContainerService.HintSize="704,137" sap2010:WorkflowViewState.IdRef="Sequence_4">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </Sequence>
+            <Sequence DisplayName="SSD" sap:VirtualizedContainerService.HintSize="704,137" sap2010:WorkflowViewState.IdRef="Sequence_5">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </Sequence>
+            <Sequence DisplayName="HDD" sap:VirtualizedContainerService.HintSize="512,135" sap2010:WorkflowViewState.IdRef="Sequence_6">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </Sequence>
+            <Sequence DisplayName="Weight" sap:VirtualizedContainerService.HintSize="512,135" sap2010:WorkflowViewState.IdRef="Sequence_7">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </Sequence>
+            <Sequence DisplayName="Battery" sap:VirtualizedContainerService.HintSize="512,130" sap2010:WorkflowViewState.IdRef="Sequence_8">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </Sequence>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-1928, -8, 1936, 1048" BrowserType="Chrome" IconBase64="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" Selector="&lt;html app='chrome.exe' title='*Яндекс Маркет*' /&gt;" Title="Все фильтры — Ноутбуки — выбор по параметрам на Яндекс Маркете" Url="https://market.yandex.ru/catalog--noutbuki/*" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>

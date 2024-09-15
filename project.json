@@ -2,7 +2,7 @@
   "name": "YandexMarketBot",
   "projectId": "b3fbadc7-30c4-422d-a565-b1cf746e28a5",
   "description": "Finds best laptops on Yandex Market and extracts detailed info about each one",
-  "main": "Main.xaml",
+  "main": "Form\\ShowUserForm.xaml",
   "dependencies": {
     "UiPath.Excel.Activities": "[2.24.0-preview]",
     "UiPath.Form.Activities": "[24.10.2]",
@@ -51,8 +51,8 @@
   "expressionLanguage": "CSharp",
   "entryPoints": [
     {
-      "filePath": "Main.xaml",
-      "uniqueId": "e42ea2c5-74d5-4a8a-a38f-5623a109446c",
+      "filePath": "Form\\ShowUserForm.xaml",
+      "uniqueId": "92e46156-0cc0-4051-bddd-7e18ec421a26",
       "input": [],
       "output": []
     }
