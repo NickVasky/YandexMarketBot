@@ -5,7 +5,7 @@
     <x:Property Name="in_targetProductsCount" Type="InArgument(x:Int32)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1234,1347</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1234,1570</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -121,9 +121,10 @@
       <AssemblyReference>System.Data.SqlClient</AssemblyReference>
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
       <AssemblyReference>System.Private.Xml.Linq</AssemblyReference>
+      <AssemblyReference>YandexMarketBot.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="GetProductsList" sap:VirtualizedContainerService.HintSize="758,1282" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="GetProductsList" sap:VirtualizedContainerService.HintSize="758,1505" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="productsDt" />
       <Variable x:TypeArguments="x:Int32" Name="prevParsedCardsCount">
@@ -146,13 +147,13 @@
         </OutArgument>
       </ui:BuildDataTable.DataTable>
     </ui:BuildDataTable>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Yandex Market" sap:VirtualizedContainerService.HintSize="696,1102" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="db404fcc-717a-4d4b-ab3a-2e2fd8438f4f" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Yandex Market" sap:VirtualizedContainerService.HintSize="696,1325" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="db404fcc-717a-4d4b-ab3a-2e2fd8438f4f" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="662,862" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="662,1085" sap2010:WorkflowViewState.IdRef="Sequence_4">
             <Sequence.Variables>
               <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="productCardElements" />
             </Sequence.Variables>
@@ -161,8 +162,27 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'подешевле'" sap:VirtualizedContainerService.HintSize="600,225" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="db404fcc-717a-4d4b-ab3a-2e2fd8438f4f" Version="V4">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://market.yandex.ru/catalog--noutbuki/26895412/list?hid=91013&amp;rs=eJxl0T1OwzAYgOEaRSh4IZU6VEGgr6JD1CW24_y0W1GnTIgLRI7rQKQAVdMeoOwsPUEHJrgIZ-A0RKEVsTz7fezPNju7R3ffFh5h20YODAcwcM7dy6UqxLbaZCxbiUfFoOf18NUxwYCb5OKUBO3iyc9h3vW09aHmEaCup5ofw9g8P9C8BVbXM81PYNL1QcefkhRSMwm1hAM3p-BaQoGaF9WTPvTNRB93BjNzFn0XF1wz0XcZwcg86O_SUZvcto_muDdS1FtRZVKsX7e1qpq03KjnOquVWMsneP94Q97u8IUwb509XMCicde5qEv5z1aVKF-OqPmAnz32dp975KDUjhIppArIA6Mxi3gc8OmURIlPWb5MSEiFLPKoCAmnPBFEFUHMGIkI8alPfwELrY9y&amp;glfilter=24892510%3A24892630%2C39026125%2C39026130%2C39026134%2C39026127&amp;glfilter=37331890%3A50198831%2C50198796%2C50198830%2C50198806%2C53327653%2C50198854%2C53327625%2C50198849%2C50198809%2C53327674%2C53327627%2C53327684%2C50198838%2C50198858%2C50198832%2C50198810%2C53327636%2C53327629%2C50198848%2C50198834%2C53327680%2C53327666%2C53327667%2C53327665%2C53327662%2C53327685&amp;glfilter=37699290%3A39025848%2C39025873%2C39025878%2C39025840%2C39025874&amp;glfilter=23674510%3A1.2~3.5&amp;glfilter=24083873%3A8~12" CVScreenId="7b044710-b81a-4b54-8624-5f0e785417a7" DesignTimeRectangle="642, 446, 72, 16" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;webctrl aaname='подешевле' parentid='/content/page/fancyPage/searchControls/sort' tag='BUTTON' /&gt;" Guid="525cf9da-7eb2-418e-bbd8-ecdb9016eef5" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Ноутбуки — купить по низкой цене на Яндекс Маркете' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="0" />
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
             <Delay Duration="00:00:03" sap:VirtualizedContainerService.HintSize="600,122" sap2010:WorkflowViewState.IdRef="Delay_1" />
-            <Flowchart DisplayName="Flowchart - Parse Until Count Condition met" sap:VirtualizedContainerService.HintSize="1294,778" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+            <Flowchart DisplayName="Flowchart - Parse Until Count Condition met" sap:VirtualizedContainerService.HintSize="600,650" sap2010:WorkflowViewState.IdRef="Flowchart_1">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
