@@ -103,15 +103,20 @@
         </InArgument>
       </ui:LogMessage.Message>
     </ui:LogMessage>
-    <ufa:ShowFormActivity InstanceName="{x:Null}" Left="{x:Null}" ShowInTaskbar="{x:Null}" ShowMargin="{x:Null}" Top="{x:Null}" TopMost="{x:Null}" Width="{x:Null}" WindowState="{x:Null}" DisplayName="Show Form" FormId="390248d4-97d9-44f0-94b9-74b1a1f82b19" sap:VirtualizedContainerService.HintSize="354,218" sap2010:WorkflowViewState.IdRef="ShowFormActivity_3" IsAsync="True" Title="Поиск ноутбуков на Яндекс Маркете">
+    <ufa:ShowFormActivity InstanceName="{x:Null}" Left="{x:Null}" ShowInTaskbar="{x:Null}" ShowMargin="{x:Null}" Top="{x:Null}" TopMost="{x:Null}" WindowState="{x:Null}" DisplayName="Show Form" FormId="390248d4-97d9-44f0-94b9-74b1a1f82b19" sap:VirtualizedContainerService.HintSize="354,218" sap2010:WorkflowViewState.IdRef="ShowFormActivity_3" IsAsync="True" Title="Поиск ноутбуков на Яндекс Маркете">
       <ufa:ShowFormActivity.Arguments>
         <scg:Dictionary x:TypeArguments="x:String, Argument" />
       </ufa:ShowFormActivity.Arguments>
       <ufa:ShowFormActivity.Height>
         <InArgument x:TypeArguments="s:Nullable(x:Int32)">
-          <Literal x:TypeArguments="s:Nullable(x:Int32)" Value="800" />
+          <Literal x:TypeArguments="s:Nullable(x:Int32)" Value="900" />
         </InArgument>
       </ufa:ShowFormActivity.Height>
+      <ufa:ShowFormActivity.Width>
+        <InArgument x:TypeArguments="s:Nullable(x:Int32)">
+          <Literal x:TypeArguments="s:Nullable(x:Int32)" Value="1024" />
+        </InArgument>
+      </ufa:ShowFormActivity.Width>
     </ufa:ShowFormActivity>
     <ui:StartTriggers ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Run Local Triggers" sap:VirtualizedContainerService.HintSize="354,118" sap2010:WorkflowViewState.IdRef="StartTriggers_1" UnSafe="False" WorkflowFileName=".local\generated\Triggers.Generated.xaml">
       <ui:StartTriggers.Arguments>

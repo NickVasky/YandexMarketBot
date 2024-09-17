@@ -5,7 +5,7 @@
     <x:Property Name="out_reviewsCount" Type="OutArgument(s:Nullable(x:Int32))" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1233,1607</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1234,1959</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -102,9 +102,13 @@
       <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
       <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
+      <AssemblyReference>System.Linq.Async.Queryable</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ExtractReviewAndRating" sap:VirtualizedContainerService.HintSize="596,1542" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ExtractReviewAndRating" sap:VirtualizedContainerService.HintSize="692,1894" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="ratingElements" />
       <Variable x:TypeArguments="x:String" Name="reviewsText" />
@@ -115,7 +119,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:FindChildren DisplayName="Find Children - Reviews" Filter="&lt;webctrl data-baobab-name='rating'/&gt;&lt;webctrl data-auto='reviews'/&gt;&lt;webctrl tag='span'/&gt;" sap:VirtualizedContainerService.HintSize="534,119" sap2010:WorkflowViewState.IdRef="FindChildren_1" Scope="FIND_DESCENDANTS">
+    <ui:FindChildren DisplayName="Find Children - Reviews" Filter="&lt;webctrl data-baobab-name='rating'/&gt;&lt;webctrl data-auto='reviews'/&gt;&lt;webctrl tag='span'/&gt;" sap:VirtualizedContainerService.HintSize="630,119" sap2010:WorkflowViewState.IdRef="FindChildren_1" Scope="FIND_DESCENDANTS">
       <ui:FindChildren.Children>
         <OutArgument x:TypeArguments="scg:IEnumerable(ui:UiElement)">
           <CSharpReference x:TypeArguments="scg:IEnumerable(ui:UiElement)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_1">ratingElements</CSharpReference>
@@ -137,105 +141,130 @@
         </ui:Target>
       </ui:FindChildren.Target>
     </ui:FindChildren>
-    <TryCatch DisplayName="Try Catch - Get Rating" sap:VirtualizedContainerService.HintSize="534,672" sap2010:WorkflowViewState.IdRef="TryCatch_1">
-      <TryCatch.Try>
-        <Sequence DisplayName="Get Rating" sap:VirtualizedContainerService.HintSize="496,412" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <If DisplayName="If - Children found" sap:VirtualizedContainerService.HintSize="630,1687" sap2010:WorkflowViewState.IdRef="If_1">
+      <If.Condition>
+        <InArgument x:TypeArguments="x:Boolean">
+          <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_7">ratingElements != null &amp;&amp; ratingElements.ToList().Count == 3</CSharpValue>
+        </InArgument>
+      </If.Condition>
+      <If.Then>
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="596,1423" sap2010:WorkflowViewState.IdRef="Sequence_4">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="text" DisplayName="Get Attribute - Rating" sap:VirtualizedContainerService.HintSize="434,219" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_1" Version="V4">
-            <uix:NGetAttributeGeneric.InUiElement>
-              <InArgument x:TypeArguments="ui:UiElement">
-                <CSharpValue x:TypeArguments="ui:UiElement" sap2010:WorkflowViewState.IdRef="CSharpValue`1_2">ratingElements.ToList()[0]</CSharpValue>
-              </InArgument>
-            </uix:NGetAttributeGeneric.InUiElement>
-            <uix:NGetAttributeGeneric.Result>
-              <OutArgument x:TypeArguments="x:String">
-                <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_8">ratingText</CSharpReference>
-              </OutArgument>
-            </uix:NGetAttributeGeneric.Result>
-          </uix:NGetAttributeGeneric>
-          <Assign DisplayName="Parse rating" sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_3">
-            <Assign.To>
-              <OutArgument x:TypeArguments="s:Nullable(x:Double)">
-                <CSharpReference x:TypeArguments="s:Nullable(x:Double)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_10">out_rating</CSharpReference>
-              </OutArgument>
-            </Assign.To>
-            <Assign.Value>
-              <InArgument x:TypeArguments="s:Nullable(x:Double)">
-                <CSharpValue x:TypeArguments="s:Nullable(x:Double)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_6">Convert.ToDouble(ratingText.Trim())</CSharpValue>
-              </InArgument>
-            </Assign.Value>
-          </Assign>
+          <TryCatch DisplayName="Try Catch - Get Rating" sap:VirtualizedContainerService.HintSize="534,672" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+            <TryCatch.Try>
+              <Sequence DisplayName="Get Rating" sap:VirtualizedContainerService.HintSize="496,412" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="text" DisplayName="Get Attribute - Rating" sap:VirtualizedContainerService.HintSize="434,219" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_1" Version="V4">
+                  <uix:NGetAttributeGeneric.InUiElement>
+                    <InArgument x:TypeArguments="ui:UiElement">
+                      <CSharpValue x:TypeArguments="ui:UiElement" sap2010:WorkflowViewState.IdRef="CSharpValue`1_2">ratingElements.ToList()[0]</CSharpValue>
+                    </InArgument>
+                  </uix:NGetAttributeGeneric.InUiElement>
+                  <uix:NGetAttributeGeneric.Result>
+                    <OutArgument x:TypeArguments="x:String">
+                      <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_8">ratingText</CSharpReference>
+                    </OutArgument>
+                  </uix:NGetAttributeGeneric.Result>
+                </uix:NGetAttributeGeneric>
+                <Assign DisplayName="Parse rating" sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_3">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="s:Nullable(x:Double)">
+                      <CSharpReference x:TypeArguments="s:Nullable(x:Double)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_10">out_rating</CSharpReference>
+                    </OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="s:Nullable(x:Double)">
+                      <CSharpValue x:TypeArguments="s:Nullable(x:Double)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_6">Convert.ToDouble(ratingText.Trim())</CSharpValue>
+                    </InArgument>
+                  </Assign.Value>
+                </Assign>
+              </Sequence>
+            </TryCatch.Try>
+            <TryCatch.Catches>
+              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="500,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ActivityAction x:TypeArguments="s:Exception">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                  </ActivityAction.Argument>
+                </ActivityAction>
+              </Catch>
+            </TryCatch.Catches>
+          </TryCatch>
+          <TryCatch DisplayName="Try Catch - Get Reviews" sap:VirtualizedContainerService.HintSize="534,663" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+            <TryCatch.Try>
+              <Sequence DisplayName="Get reviews" sap:VirtualizedContainerService.HintSize="496,412" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="text" DisplayName="Get Attribute" sap:VirtualizedContainerService.HintSize="434,219" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_2" Version="V4">
+                  <uix:NGetAttributeGeneric.InUiElement>
+                    <InArgument x:TypeArguments="ui:UiElement">
+                      <CSharpValue x:TypeArguments="ui:UiElement" sap2010:WorkflowViewState.IdRef="CSharpValue`1_3">ratingElements.ToList()[2]</CSharpValue>
+                    </InArgument>
+                  </uix:NGetAttributeGeneric.InUiElement>
+                  <uix:NGetAttributeGeneric.Result>
+                    <OutArgument x:TypeArguments="x:String">
+                      <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_4">reviewsText</CSharpReference>
+                    </OutArgument>
+                  </uix:NGetAttributeGeneric.Result>
+                </uix:NGetAttributeGeneric>
+                <Assign DisplayName="Parse reviews count" sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_1">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="s:Nullable(x:Int32)">
+                      <CSharpReference x:TypeArguments="s:Nullable(x:Int32)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_9">out_reviewsCount</CSharpReference>
+                    </OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Int32">
+                      <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_5">Convert.ToInt32(System.Text.RegularExpressions.Regex.Match(reviewsText, @"\d+").Value)</CSharpValue>
+                    </InArgument>
+                  </Assign.Value>
+                </Assign>
+              </Sequence>
+            </TryCatch.Try>
+            <TryCatch.Catches>
+              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="500,22" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ActivityAction x:TypeArguments="s:Exception">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                  </ActivityAction.Argument>
+                </ActivityAction>
+              </Catch>
+            </TryCatch.Catches>
+          </TryCatch>
         </Sequence>
-      </TryCatch.Try>
-      <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="500,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <ActivityAction x:TypeArguments="s:Exception">
-            <ActivityAction.Argument>
-              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
-            </ActivityAction.Argument>
-          </ActivityAction>
-        </Catch>
-      </TryCatch.Catches>
-    </TryCatch>
-    <TryCatch DisplayName="Try Catch - Get Reviews" sap:VirtualizedContainerService.HintSize="534,663" sap2010:WorkflowViewState.IdRef="TryCatch_2">
-      <TryCatch.Try>
-        <Sequence DisplayName="Get reviews" sap:VirtualizedContainerService.HintSize="496,412" sap2010:WorkflowViewState.IdRef="Sequence_3">
+      </If.Then>
+      <If.Else>
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,103" sap2010:WorkflowViewState.IdRef="Sequence_5">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="text" DisplayName="Get Attribute" sap:VirtualizedContainerService.HintSize="434,219" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_2" Version="V4">
-            <uix:NGetAttributeGeneric.InUiElement>
-              <InArgument x:TypeArguments="ui:UiElement">
-                <CSharpValue x:TypeArguments="ui:UiElement" sap2010:WorkflowViewState.IdRef="CSharpValue`1_3">ratingElements.ToList()[2]</CSharpValue>
-              </InArgument>
-            </uix:NGetAttributeGeneric.InUiElement>
-            <uix:NGetAttributeGeneric.Result>
-              <OutArgument x:TypeArguments="x:String">
-                <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_4">reviewsText</CSharpReference>
-              </OutArgument>
-            </uix:NGetAttributeGeneric.Result>
-          </uix:NGetAttributeGeneric>
-          <Assign DisplayName="Parse reviews count" sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_1">
-            <Assign.To>
-              <OutArgument x:TypeArguments="s:Nullable(x:Int32)">
-                <CSharpReference x:TypeArguments="s:Nullable(x:Int32)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_9">out_reviewsCount</CSharpReference>
-              </OutArgument>
-            </Assign.To>
-            <Assign.Value>
-              <InArgument x:TypeArguments="x:Int32">
-                <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_5">Convert.ToInt32(System.Text.RegularExpressions.Regex.Match(reviewsText, @"\d+").Value)</CSharpValue>
-              </InArgument>
-            </Assign.Value>
-          </Assign>
         </Sequence>
-      </TryCatch.Try>
-      <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="500,22" sap2010:WorkflowViewState.IdRef="Catch`1_2">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <ActivityAction x:TypeArguments="s:Exception">
-            <ActivityAction.Argument>
-              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
-            </ActivityAction.Argument>
-          </ActivityAction>
-        </Catch>
-      </TryCatch.Catches>
-    </TryCatch>
+      </If.Else>
+    </If>
   </Sequence>
 </Activity>

@@ -3,7 +3,7 @@
     <x:Property Name="in_marketFilters" Type="InArgument(y:MarketFilters)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1023,2636</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1023,2638</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -40,7 +40,6 @@
       <x:String>UiPath.Shared.Activities</x:String>
       <x:String>UiPath.Platform.ObjectLibrary</x:String>
       <x:String>UiPath.Platform.SyncObjects</x:String>
-      <x:String>YandexMarketBot</x:String>
       <x:String>UiPath.UIAutomationNext.Activities.Services.RuntimeAnalyze</x:String>
       <x:String>System.Linq.Expressions</x:String>
       <x:String>UiPath.UIAutomationNext.Contracts</x:String>
@@ -51,6 +50,7 @@
       <x:String>System.Security</x:String>
       <x:String>System.ComponentModel</x:String>
       <x:String>System.Globalization</x:String>
+      <x:String>YandexMarketBot</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -119,19 +119,19 @@
       <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="SetFilters" sap:VirtualizedContainerService.HintSize="704,2571" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="SetFilters" sap:VirtualizedContainerService.HintSize="704,2573" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Все фильтры — Ноутбуки — выбор по параметрам на Яндекс Маркете" sap:VirtualizedContainerService.HintSize="642,2483" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="138ad43b-8eb9-4ba3-9a4f-60136bf91c8e" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Все фильтры — Ноутбуки — выбор по параметрам на Яндекс Маркете" sap:VirtualizedContainerService.HintSize="642,2485" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="138ad43b-8eb9-4ba3-9a4f-60136bf91c8e" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="608,2243" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="608,2245" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -141,7 +141,7 @@
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="https://market.yandex.ru/catalog--noutbuki/26895412/list?hid=91013&amp;rs=eJxdzTFLw0AYxvFeKJKegyl0CCnKKzpky92bs_VWRyfRD3Cc58UEog1Nsgp-gzoJ3YV2cfUjuLgKTq5-DUOIFDs__x8POhfkbOnQQ-q6xAN_CENvJ9i7sYmu80pxVehbi9ALe3TcJRRokwz-krgdJ-147Peh73kBGF3WOldGz2d1aXOFKqvsXalKq-cmVQjrr0H48phS0bpdfwSjxh1su_ifg7dnGq7frzrl-gEEjdq_1mVmNqjIdXa_uVp8P4SfPytCsVVHPgHSqPH2F---qlkBq480fHpdEM85dxNpRGKNvUQ-xYmIhZQnnMsoxmSKTDJhuGTMIrNaSJOcokVkE8YiHvFfkCBfmA%2C%2C&amp;qrfrom=4" CVScreenId="dcd97b53-510d-4b7b-9eef-09d5efc872c7" DesignTimeRectangle="232, 539, 290, 40" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;webctrl parentid='/content/page/fancyPage/allFiltersEntrypoint' tag='BUTTON' type='button' /&gt;" Guid="aa3b6e8d-8bca-4844-af27-8a18f16bc5a3" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Ноутбуки — купить по низкой цене на Яндекс Маркете' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
-                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                       <uix:Target CVScreenId="dcd97b53-510d-4b7b-9eef-09d5efc872c7" CvElementArea="229, 537, 295, 43" CvTextArea="336, 551, 81, 16" CvTextArgument="Bce ownbTpbl" CvType="Button" DesignTimeRectangle="337, 551, 80, 16" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Все фильтры' parentid='/content/page/fancyPage/allFiltersEntrypoint' tag='SPAN' type='' class='_1_C0_ _1n-yE _16wT_ _1Dmnq' check:innerText='Все фильтры' /&gt;" Guid="ac745c6b-78e9-4bb4-a8f6-9326787db8a6" SearchSteps="FuzzySelector, CV" />
                     </scg:List>
                   </uix:TargetAnchorable.Anchors>
@@ -158,7 +158,7 @@
                 </uix:VerifyExecutionOptions>
               </uix:NClick.VerifyOptions>
             </uix:NClick>
-            <Sequence DisplayName="CPU" sap:VirtualizedContainerService.HintSize="546,57" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <Sequence DisplayName="CPU" sap:VirtualizedContainerService.HintSize="450,878" sap2010:WorkflowViewState.IdRef="Sequence_3">
               <Sequence.Variables>
                 <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="cpuCheckboxes" />
               </Sequence.Variables>
@@ -168,7 +168,7 @@
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,175" sap2010:WorkflowViewState.IdRef="LogMessage_2">
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,173" sap2010:WorkflowViewState.IdRef="LogMessage_2">
                 <ui:LogMessage.Message>
                   <InArgument x:TypeArguments="x:Object">
                     <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_8">"Applying CPU Filters..."</CSharpValue>
@@ -179,7 +179,7 @@
                 <uix:NClick.Target>
                   <uix:TargetAnchorable BrowserURL="https://market.yandex.ru/catalog--noutbuki/26895412/filters?hid=91013&amp;qrfrom=4&amp;local-offers-first=0" CVScreenId="1a92e366-af19-4e67-8d73-d120b03be8ad" DesignTimeRectangle="57, 547, 261, 36" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Линейка процессора' tag='BUTTON' /&gt;" Guid="25e3d63b-4c31-4b4a-9458-5e6a6944ff11" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Все фильтры — Ноутбуки — выбор по параметрам на Яндекс Маркете' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
                     <uix:TargetAnchorable.Anchors>
-                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                         <uix:Target CVScreenId="1a92e366-af19-4e67-8d73-d120b03be8ad" CvElementArea="68, 556, 21, 19" CvTextArea="94, 558, 127, 15" CvTextArgument="nnheñka npoueccopa" CvType="ArrowButton" DesignTimeRectangle="69, 557, 152, 18" ElementType="Button" FuzzySelectorArgument="&lt;webctrl aaname='Линейка процессора' tag='BUTTON' type='' class='_1RgR0 _2k6P8' check:innerText='Линейка процессора' /&gt;" Guid="194ffa65-d242-4e01-bd3a-27468ff5b07b" SearchSteps="FuzzySelector, CV" />
                       </scg:List>
                     </uix:TargetAnchorable.Anchors>
@@ -318,7 +318,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:ForEach>
-              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Линейка процессора' - Hide" sap:VirtualizedContainerService.HintSize="388,218" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="138ad43b-8eb9-4ba3-9a4f-60136bf91c8e" Version="V4">
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Линейка процессора' - Hide" sap:VirtualizedContainerService.HintSize="388,216" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="138ad43b-8eb9-4ba3-9a4f-60136bf91c8e" Version="V4">
                 <uix:NClick.Target>
                   <uix:TargetAnchorable BrowserURL="https://market.yandex.ru/catalog--noutbuki/26895412/filters?hid=91013&amp;qrfrom=4&amp;local-offers-first=0" CVScreenId="1a92e366-af19-4e67-8d73-d120b03be8ad" DesignTimeRectangle="57, 547, 261, 36" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Линейка процессора' tag='BUTTON' /&gt;" Guid="25e3d63b-4c31-4b4a-9458-5e6a6944ff11" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Все фильтры — Ноутбуки — выбор по параметрам на Яндекс Маркете' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
                     <uix:TargetAnchorable.Anchors>

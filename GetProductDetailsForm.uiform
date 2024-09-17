@@ -534,6 +534,119 @@
         "label": "Columns"
       },
       {
+        "columns": [
+          {
+            "components": [
+              {
+                "content": "Количество отзывов:",
+                "key": "reviews_label",
+                "input": false,
+                "tableView": false,
+                "label": "Label",
+                "type": "label"
+              },
+              {
+                "label": "от",
+                "labelPosition": "left-left",
+                "tableView": false,
+                "defaultValue": 10,
+                "delimiter": false,
+                "requireDecimal": false,
+                "truncateMultipleSpaces": false,
+                "validate": {
+                  "required": true,
+                  "min": 0,
+                  "integer": true
+                },
+                "key": "reviews",
+                "type": "number",
+                "labelWidth": 6,
+                "labelMargin": 0,
+                "input": true
+              },
+              {
+                "content": "Желаемое количество товаров:",
+                "key": "label1",
+                "input": false,
+                "tableView": false,
+                "label": "Label",
+                "type": "label"
+              },
+              {
+                "label": "от",
+                "labelPosition": "left-left",
+                "tableView": false,
+                "defaultValue": 10,
+                "delimiter": false,
+                "requireDecimal": false,
+                "truncateMultipleSpaces": false,
+                "validate": {
+                  "required": true,
+                  "min": 1,
+                  "max": 42,
+                  "integer": true
+                },
+                "key": "products_count",
+                "type": "number",
+                "labelWidth": 6,
+                "labelMargin": 0,
+                "input": true
+              }
+            ],
+            "width": 6,
+            "offset": 0,
+            "push": 0,
+            "pull": 0,
+            "size": "md",
+            "currentWidth": 6
+          },
+          {
+            "components": [
+              {
+                "content": "Рейтинг:",
+                "key": "rating_label",
+                "input": false,
+                "tableView": false,
+                "label": "Label",
+                "type": "label"
+              },
+              {
+                "label": "от",
+                "labelPosition": "left-left",
+                "suffix": "⭐️",
+                "tableView": false,
+                "defaultValue": 4.5,
+                "delimiter": false,
+                "requireDecimal": false,
+                "truncateMultipleSpaces": false,
+                "validate": {
+                  "required": true,
+                  "min": 0,
+                  "max": 5
+                },
+                "key": "rating",
+                "type": "number",
+                "labelWidth": 6,
+                "labelMargin": 0,
+                "decimalLimit": 1,
+                "input": true
+              }
+            ],
+            "width": 6,
+            "offset": 0,
+            "push": 0,
+            "pull": 0,
+            "size": "md",
+            "currentWidth": 6
+          }
+        ],
+        "key": "columns_reviews_rating",
+        "type": "columns",
+        "input": false,
+        "tableView": false,
+        "label": "Columns"
+      },
+      {
         "label": "Начать поиск",
         "action": "event",
         "showValidations": false,

@@ -1,9 +1,11 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="SubmitTrigger" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ufa="clr-namespace:UiPath.Forms.Activities;assembly=UiPath.Forms.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:y="clr-namespace:YandexMarketBot;assembly=YandexMarketBot.Core">
   <x:Members>
     <x:Property Name="TriggerEventArgs" Type="InArgument(ufa:FormInfoTriggerEventArgs)" />
+    <x:Property Name="StopTriggersOutArgument" Type="OutArgument(x:Boolean)" />
+    <x:Property Name="BreakTriggerScopeInArgument" Type="InArgument(x:String)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1234,1721</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1234,1530</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -90,26 +92,27 @@
       <AssemblyReference>System.Linq.Expressions</AssemblyReference>
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
       <AssemblyReference>YandexMarketBot.Core</AssemblyReference>
+      <AssemblyReference>System.Linq.Async.Queryable</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="SubmitTrigger" sap:VirtualizedContainerService.HintSize="576,1656" sap2010:WorkflowViewState.IdRef="Sequence_1">
-    <Sequence.Variables>
-      <Variable x:TypeArguments="y:MarketFilters" Name="marketFilters" />
-    </Sequence.Variables>
+  <Sequence DisplayName="SubmitTrigger" sap:VirtualizedContainerService.HintSize="558,1465" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ufa:FormTriggerActivity x:TypeArguments="ufa:FormInfoTriggerEventArgs" MessageId="{x:Null}" Tag="{x:Null}" DisplayName="Form Event Trigger" Enabled="True" Event="click.submit" FormId="390248d4-97d9-44f0-94b9-74b1a1f82b19" sap:VirtualizedContainerService.HintSize="514,191" sap2010:WorkflowViewState.IdRef="FormTriggerActivity`1_1" SchedulingMode="Sequential" TriggerId="9229bded-e78b-4bbf-be35-e75021751c30" />
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="514,173" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info">
+    <ufa:FormTriggerActivity x:TypeArguments="ufa:FormInfoTriggerEventArgs" MessageId="{x:Null}" Tag="{x:Null}" DisplayName="Form Event Trigger" Enabled="True" Event="click.submit" FormId="390248d4-97d9-44f0-94b9-74b1a1f82b19" sap:VirtualizedContainerService.HintSize="496,191" sap2010:WorkflowViewState.IdRef="FormTriggerActivity`1_1" SchedulingMode="Sequential" TriggerId="9229bded-e78b-4bbf-be35-e75021751c30" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="496,173" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info">
       <ui:LogMessage.Message>
         <InArgument x:TypeArguments="x:Object">
           <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_6">"User submitted data"</CSharpValue>
         </InArgument>
       </ui:LogMessage.Message>
     </ui:LogMessage>
-    <Sequence DisplayName="Submit Trigger Actions" sap:VirtualizedContainerService.HintSize="514,1204" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="Submit Trigger Actions" sap:VirtualizedContainerService.HintSize="496,1013" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <Sequence.Variables>
         <Variable x:TypeArguments="scg:IEnumerable(x:String)" Name="cpu" />
         <Variable x:TypeArguments="s:Nullable(x:Int32)" Name="ramFrom" />
@@ -123,13 +126,17 @@
         <Variable x:TypeArguments="s:Nullable(x:Int32)" Name="batteryFrom" />
         <Variable x:TypeArguments="s:Nullable(x:Int32)" Name="batteryTo" />
         <Variable x:TypeArguments="x:String" Default="UserForm" Name="instanceName" />
+        <Variable x:TypeArguments="y:MarketFilters" Name="marketFilters" />
+        <Variable x:TypeArguments="x:Int32" Name="reviews" />
+        <Variable x:TypeArguments="x:Int32" Name="productsCount" />
+        <Variable x:TypeArguments="x:Double" Name="rating" />
       </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ufa:GetFormFieldsActivity InstanceName="{x:Null}" DisplayName="Get Form Values" FormId="390248d4-97d9-44f0-94b9-74b1a1f82b19" sap:VirtualizedContainerService.HintSize="452,172" sap2010:WorkflowViewState.IdRef="GetFormFieldsActivity_1">
+      <ufa:GetFormFieldsActivity InstanceName="{x:Null}" DisplayName="Get Form Values" FormId="390248d4-97d9-44f0-94b9-74b1a1f82b19" sap:VirtualizedContainerService.HintSize="434,172" sap2010:WorkflowViewState.IdRef="GetFormFieldsActivity_1">
         <ufa:GetFormFieldsActivity.Arguments>
           <OutArgument x:TypeArguments="scg:IEnumerable(x:String)" x:Key="cpu">
             <CSharpReference x:TypeArguments="scg:IEnumerable(x:String)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_1">cpu</CSharpReference>
@@ -164,60 +171,51 @@
           <OutArgument x:TypeArguments="s:Nullable(x:Int32)" x:Key="battery_to">
             <CSharpReference x:TypeArguments="s:Nullable(x:Int32)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_25">batteryTo</CSharpReference>
           </OutArgument>
+          <OutArgument x:TypeArguments="x:Int32" x:Key="reviews">
+            <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_27">reviews</CSharpReference>
+          </OutArgument>
+          <OutArgument x:TypeArguments="x:Int32" x:Key="products_count">
+            <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_28">productsCount</CSharpReference>
+          </OutArgument>
+          <OutArgument x:TypeArguments="x:Double" x:Key="rating">
+            <CSharpReference x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpReference`1_29">rating</CSharpReference>
+          </OutArgument>
         </ufa:GetFormFieldsActivity.Arguments>
       </ufa:GetFormFieldsActivity>
-      <ufa:CloseFormActivity InstanceName="{x:Null}" DisplayName="Close Form" FormId="390248d4-97d9-44f0-94b9-74b1a1f82b19" sap:VirtualizedContainerService.HintSize="452,121" sap2010:WorkflowViewState.IdRef="CloseFormActivity_1" />
-      <Assign DisplayName="Create filters object" sap:VirtualizedContainerService.HintSize="452,115" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <ufa:CloseFormActivity InstanceName="{x:Null}" DisplayName="Close Form" FormId="390248d4-97d9-44f0-94b9-74b1a1f82b19" sap:VirtualizedContainerService.HintSize="434,121" sap2010:WorkflowViewState.IdRef="CloseFormActivity_1" />
+      <Assign DisplayName="Create filters object" sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_1">
         <Assign.To>
           <OutArgument x:TypeArguments="y:MarketFilters">
-            <CSharpReference x:TypeArguments="y:MarketFilters" sap2010:WorkflowViewState.IdRef="CSharpReference`1_13">marketFilters</CSharpReference>
+            <CSharpReference x:TypeArguments="y:MarketFilters" sap2010:WorkflowViewState.IdRef="CSharpReference`1_30">marketFilters</CSharpReference>
           </OutArgument>
         </Assign.To>
         <Assign.Value>
           <InArgument x:TypeArguments="y:MarketFilters">
-            <CSharpValue x:TypeArguments="y:MarketFilters" sap2010:WorkflowViewState.IdRef="CSharpValue`1_5" xml:space="preserve">new MarketFilters() {
-	cpu=cpu.ToList(),
-	ram=(ramFrom.HasValue ? new Range&lt;int&gt;(ramFrom.Value, ramTo.Value) : null),
-	ssd=(ssdFrom.HasValue ? new Range&lt;int&gt;(ssdFrom.Value, ssdTo.Value) : null),
-	hdd=(hddFrom.HasValue ? new Range&lt;int&gt;(hddFrom.Value, hddTo.Value) : null),
-	weight=(weightFrom.HasValue ? new Range&lt;double&gt;(weightFrom.Value, weightTo.Value) : null),
-	battery=(batteryFrom.HasValue ? new Range&lt;int&gt;(batteryFrom.Value, batteryTo.Value) : null)
-}</CSharpValue>
+            <CSharpValue x:TypeArguments="y:MarketFilters" sap2010:WorkflowViewState.IdRef="CSharpValue`1_11">new MarketFilters(cpu.ToList(), ramFrom, ramTo, ssdFrom, ssdTo, hddFrom, hddTo, weightFrom, weightTo, batteryFrom, batteryTo, reviews, rating, productsCount)</CSharpValue>
           </InArgument>
         </Assign.Value>
       </Assign>
-      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="452,317" sap2010:WorkflowViewState.IdRef="CommentOut_1">
-        <ui:CommentOut.Body>
-          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,206" sap2010:WorkflowViewState.IdRef="Sequence_3">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <ui:StopTriggers DisplayName="Stop Local Triggers" sap:VirtualizedContainerService.HintSize="354,118" sap2010:WorkflowViewState.IdRef="StopTriggers_1">
-              <ui:StopTriggers.ShouldStop>
-                <OutArgument x:TypeArguments="x:Boolean">
-                  <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_26">StopTriggersOutArgument</CSharpReference>
-                </OutArgument>
-              </ui:StopTriggers.ShouldStop>
-            </ui:StopTriggers>
-          </Sequence>
-        </ui:CommentOut.Body>
-      </ui:CommentOut>
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="452,173" sap2010:WorkflowViewState.IdRef="LogMessage_1">
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,173" sap2010:WorkflowViewState.IdRef="LogMessage_1">
         <ui:LogMessage.Message>
           <InArgument x:TypeArguments="x:Object">
             <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_7">"Starting bot..."</CSharpValue>
           </InArgument>
         </ui:LogMessage.Message>
       </ui:LogMessage>
-      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Main - Invoke Workflow File (Main.xaml)" sap:VirtualizedContainerService.HintSize="452,195" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Main.xaml">
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Main - Invoke Workflow File (Main.xaml)" sap:VirtualizedContainerService.HintSize="434,204" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Main.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <InArgument x:TypeArguments="y:MarketFilters" x:Key="in_marketFilters">
             <CSharpValue x:TypeArguments="y:MarketFilters" sap2010:WorkflowViewState.IdRef="CSharpValue`1_9">marketFilters</CSharpValue>
           </InArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
+      <ui:StopTriggers DisplayName="Stop Local Triggers" sap:VirtualizedContainerService.HintSize="434,118" sap2010:WorkflowViewState.IdRef="StopTriggers_2">
+        <ui:StopTriggers.ShouldStop>
+          <OutArgument x:TypeArguments="x:Boolean">
+            <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_31">StopTriggersOutArgument</CSharpReference>
+          </OutArgument>
+        </ui:StopTriggers.ShouldStop>
+      </ui:StopTriggers>
     </Sequence>
   </Sequence>
 </Activity>

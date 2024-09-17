@@ -1,0 +1,565 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="GetDetails" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.Collections;assembly=System.Private.CoreLib" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:uasf="clr-namespace:UiPath.Activities.System.FileOperations;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="io_currentRow" Type="InOutArgument(sd:DataRow)" />
+  </x:Members>
+  <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
+  <sap:VirtualizedContainerService.HintSize>1023,1630</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Text</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Services.RuntimeAnalyze</x:String>
+      <x:String>UiPath.Activities.System.FileOperations</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities.Business</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
+      <x:String>System.Numerics</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.CSharp</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Linq.Async.Queryable</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="GetProductDetails" sap:VirtualizedContainerService.HintSize="694,2706" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome" sap:VirtualizedContainerService.HintSize="632,2618" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="DebuggerApi" OpenMode="IfNotOpen" ScopeGuid="4a331020-b1ee-4ab5-8905-23a4ba569d14" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="598,2378" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NGoToUrl DisplayName="Go To URL" sap:VirtualizedContainerService.HintSize="536,114" sap2010:WorkflowViewState.IdRef="NGoToUrl_3" Version="V4">
+              <uix:NGoToUrl.Url>
+                <InArgument x:TypeArguments="x:String">
+                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_23">io_currentRow["URL"].ToString()</CSharpValue>
+                </InArgument>
+              </uix:NGoToUrl.Url>
+            </uix:NGoToUrl>
+            <TryCatch DisplayName="Try Get Image" sap:VirtualizedContainerService.HintSize="536,346" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+              <TryCatch.Try>
+                <Sequence DisplayName="Get Image" sap:VirtualizedContainerService.HintSize="496,672" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="x:String" Name="pictureLink" />
+                    <Variable x:TypeArguments="x:String" Name="picturePath" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="src" DisplayName="Get Attribute - Image Src" sap:VirtualizedContainerService.HintSize="434,239" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_2" ScopeIdentifier="4a331020-b1ee-4ab5-8905-23a4ba569d14" Version="V4">
+                    <uix:NGetAttributeGeneric.Result>
+                      <OutArgument x:TypeArguments="x:String">
+                        <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_4">pictureLink</CSharpReference>
+                      </OutArgument>
+                    </uix:NGetAttributeGeneric.Result>
+                    <uix:NGetAttributeGeneric.Target>
+                      <uix:TargetAnchorable BrowserURL="https://market.yandex.ru/product--noutbuk-honor-magicbook-x-16-16-512-space-gray-brn-f56/1865172619?sku=102778442361&amp;uniqueId=969973&amp;do-waremd5=6RukYonU13YrSzmOWWOUFQ&amp;sponsored=1&amp;nid=26895412" DesignTimeRectangle="103, 421, 266, 180" DesignTimeScaleFactor="1" ElementType="Icon" FullSelectorArgument="&lt;webctrl tag='DIV' data-zone-name='media-viewer-gallery' /&gt;&lt;webctrl id='transition-page' tag='IMG' /&gt;" Guid="1af30cdc-1ee8-41f7-ad0d-ff119453ee8f" ScopeSelectorArgument="&lt;html app='chrome.exe' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="0" />
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NGetAttributeGeneric.Target>
+                  </uix:NGetAttributeGeneric>
+                  <Assign DisplayName="Set Picture path" sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_4">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">
+                        <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_8">picturePath</CSharpReference>
+                      </OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_25">System.IO.Path.GetFullPath($@"Data\Temp\{DateTime.Now.ToString("ddMMyyyy-HHmmss")}.webp")</CSharpValue>
+                      </InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <uasf:DownloadFileFromUrl ResponseAttachment="{x:Null}" Timeout="{x:Null}" ConflictResolution="Rename" DisplayName="Download File from URL" sap:VirtualizedContainerService.HintSize="434,122" sap2010:WorkflowViewState.IdRef="DownloadFileFromUrl_1">
+                    <uasf:DownloadFileFromUrl.FileName>
+                      <InArgument x:TypeArguments="x:String">
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_11">picturePath</CSharpValue>
+                      </InArgument>
+                    </uasf:DownloadFileFromUrl.FileName>
+                    <uasf:DownloadFileFromUrl.Url>
+                      <InArgument x:TypeArguments="x:String">
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_6">pictureLink</CSharpValue>
+                      </InArgument>
+                    </uasf:DownloadFileFromUrl.Url>
+                  </uasf:DownloadFileFromUrl>
+                  <Assign DisplayName="Add Image Path" sap:VirtualizedContainerService.HintSize="434,107" sap2010:WorkflowViewState.IdRef="Assign_3">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Object">
+                        <CSharpReference x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpReference`1_7">io_currentRow["PicturePath"]</CSharpReference>
+                      </OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Object">
+                        <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_12">picturePath</CSharpValue>
+                      </InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </TryCatch.Try>
+              <TryCatch.Catches>
+                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="440,152" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ActivityAction x:TypeArguments="s:Exception">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                    </ActivityAction.Argument>
+                    <Assign DisplayName="Add Image Path" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_10">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:Object">
+                          <CSharpReference x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpReference`1_20">io_currentRow["PicturePath"]</CSharpReference>
+                        </OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:Object">
+                          <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_27">"-"</CSharpValue>
+                        </InArgument>
+                      </Assign.Value>
+                    </Assign>
+                  </ActivityAction>
+                </Catch>
+              </TryCatch.Catches>
+            </TryCatch>
+            <Sequence DisplayName="Get All Details" sap:VirtualizedContainerService.HintSize="536,1151" sap2010:WorkflowViewState.IdRef="Sequence_5">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="x:String" Name="productDetails" />
+              </Sequence.Variables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Все характеристики'" sap:VirtualizedContainerService.HintSize="434,225" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4a331020-b1ee-4ab5-8905-23a4ba569d14" Version="V4">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="https://market.yandex.ru/product--magicbook-x-16-2024/59992039?sku=102732507765&amp;uniqueId=119485579&amp;do-waremd5=etg2YLx8Hji2vxqPnGG_7Q&amp;sponsored=1&amp;nid=26895412" CVScreenId="e16085c5-7630-4207-aefc-f593616ce2d7" DesignTimeRectangle="912, 736, 122, 15" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Все характеристики' tag='SPAN' /&gt;" Guid="de693d75-fd7e-4cd2-bb3a-ec060986fe01" ScopeSelectorArgument="&lt;html app='chrome.exe' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="0" />
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NClick.Target>
+                <uix:NClick.VerifyOptions>
+                  <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                    <uix:VerifyExecutionOptions.Retry>
+                      <InArgument x:TypeArguments="x:Boolean" />
+                    </uix:VerifyExecutionOptions.Retry>
+                    <uix:VerifyExecutionOptions.Timeout>
+                      <InArgument x:TypeArguments="x:Double" />
+                    </uix:VerifyExecutionOptions.Timeout>
+                  </uix:VerifyExecutionOptions>
+                </uix:NClick.VerifyOptions>
+              </uix:NClick>
+              <ui:FindChildren Children="{x:Null}" DisplayName="Find Children - Details" Filter="&lt;webctrl tag='div' data-auto='product-spec-item'/&gt;" sap:VirtualizedContainerService.HintSize="434,119" sap2010:WorkflowViewState.IdRef="FindChildren_1" Scope="FIND_DESCENDANTS">
+                <ui:FindChildren.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="1a87efb8-99a0-43a3-9a66-25d5d927a71e" Selector="&lt;webctrl tag='div' data-auto='specs-list-fullExtended' /&gt;">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ui:FindChildren.Target>
+              </ui:FindChildren>
+              <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="visibleInnerText" DisplayName="Get Attribute - visible inner text" sap:VirtualizedContainerService.HintSize="434,239" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_1" ScopeIdentifier="4a331020-b1ee-4ab5-8905-23a4ba569d14" Version="V4">
+                <uix:NGetAttributeGeneric.Result>
+                  <OutArgument x:TypeArguments="x:String">
+                    <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_2">productDetails</CSharpReference>
+                  </OutArgument>
+                </uix:NGetAttributeGeneric.Result>
+                <uix:NGetAttributeGeneric.Target>
+                  <uix:TargetAnchorable BrowserURL="https://market.yandex.ru/product--noutbuk-honor-magicbook-x-16-16-512-space-gray-brn-f56/1865172619?sku=102778442361&amp;uniqueId=969973&amp;do-waremd5=6RukYonU13YrSzmOWWOUFQ&amp;sponsored=1&amp;nid=26895412" DesignTimeRectangle="411, -76, 652, 940" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;webctrl tag='DIV' data-auto='specs-list-fullExtended' /&gt;" Guid="779f803a-bd6d-4da0-98f2-9f5e7ab7a217" ScopeSelectorArgument="&lt;html app='chrome.exe' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="0" />
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NGetAttributeGeneric.Target>
+              </uix:NGetAttributeGeneric>
+              <Assign DisplayName="Clean product details" sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_1">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">
+                    <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_3">productDetails</CSharpReference>
+                  </OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">
+                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_5">productDetails.Replace("Общие характеристики", "").Replace("Дополнительно","").Trim().Replace("\n",": ")</CSharpValue>
+                  </InArgument>
+                </Assign.Value>
+              </Assign>
+              <Assign DisplayName="Add details" sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_2">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:Object">
+                    <CSharpReference x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpReference`1_5">io_currentRow["ProductDetails"]</CSharpReference>
+                  </OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:Object">
+                    <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_8">productDetails</CSharpValue>
+                  </InArgument>
+                </Assign.Value>
+              </Assign>
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Все характеристики'" sap:VirtualizedContainerService.HintSize="434,218" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4a331020-b1ee-4ab5-8905-23a4ba569d14" Version="V4">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="https://market.yandex.ru/product--magicbook-x-16-2024/59992039?sku=102732507765&amp;uniqueId=119485579&amp;do-waremd5=etg2YLx8Hji2vxqPnGG_7Q&amp;sponsored=1&amp;nid=26895412" CVScreenId="e16085c5-7630-4207-aefc-f593616ce2d7" DesignTimeRectangle="912, 736, 122, 15" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Все характеристики' tag='SPAN' /&gt;" Guid="de693d75-fd7e-4cd2-bb3a-ec060986fe01" ScopeSelectorArgument="&lt;html app='chrome.exe' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="0" />
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NClick.Target>
+                <uix:NClick.VerifyOptions>
+                  <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                    <uix:VerifyExecutionOptions.Retry>
+                      <InArgument x:TypeArguments="x:Boolean" />
+                    </uix:VerifyExecutionOptions.Retry>
+                    <uix:VerifyExecutionOptions.Timeout>
+                      <InArgument x:TypeArguments="x:Double" />
+                    </uix:VerifyExecutionOptions.Timeout>
+                  </uix:VerifyExecutionOptions>
+                </uix:NClick.VerifyOptions>
+              </uix:NClick>
+            </Sequence>
+            <Sequence DisplayName="Get reviews distribution" sap:VirtualizedContainerService.HintSize="536,677" sap2010:WorkflowViewState.IdRef="Sequence_8">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="ratingElements" />
+                <Variable x:TypeArguments="x:String" Name="rateStatSummary" />
+              </Sequence.Variables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click - Reviews" sap:VirtualizedContainerService.HintSize="474,225" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4a331020-b1ee-4ab5-8905-23a4ba569d14" Version="V4">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="https://market.yandex.ru/product--noutbuk-honor-magicbook-14-r5-5500u-16-gb-512-gb-dos-space-gray/105126688?sku=102961249292&amp;uniqueId=119485579&amp;do-waremd5=OjZ1gXnBPWapcwWLYn5rPg&amp;nid=26895412" CVScreenId="873e145f-674d-4218-a3ea-efbaa3f403be" DesignTimeRectangle="397, 490, 107, 14" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;webctrl tag='DIV' data-zone-name='Stars' /&gt;&lt;webctrl tag='A' /&gt;" Guid="85202c84-d9fe-41fb-adaf-75ed44b89bf2" ScopeSelectorArgument="&lt;html app='chrome.exe' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="0" />
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NClick.Target>
+                <uix:NClick.VerifyOptions>
+                  <uix:VerifyExecutionOptions DisplayName="Label 'К описанию товара'" Mode="Appears">
+                    <uix:VerifyExecutionOptions.Retry>
+                      <InArgument x:TypeArguments="x:Boolean" />
+                    </uix:VerifyExecutionOptions.Retry>
+                    <uix:VerifyExecutionOptions.Target>
+                      <uix:TargetAnchorable BrowserURL="https://market.yandex.ru/product--magicbook-x-16-2024/59992039/reviews?sku=102732552728&amp;uniqueId=119485579&amp;do-waremd5=K2jWHD1lvyowdRD6p3xJLA&amp;businessReviews=1" CVScreenId="63be9708-8d11-467b-a8ca-20641119ff3b" DesignTimeRectangle="265, 352, 115, 15" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='К описанию товара' tag='SPAN' /&gt;" Guid="27ecd168-9474-482c-99bf-c92574ccded3" InformativeScreenshot="d7ff4eb7fd231233ff6704876c8044c6.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Стоит ли покупать Ноутбук HONOR MagicBook X16 2024/16&amp;quot;/Core i5-12450H/16/512/noOS/Space Gray? Отзывы на Яндекс Маркете' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                    </uix:VerifyExecutionOptions.Target>
+                    <uix:VerifyExecutionOptions.Timeout>
+                      <InArgument x:TypeArguments="x:Double" />
+                    </uix:VerifyExecutionOptions.Timeout>
+                  </uix:VerifyExecutionOptions>
+                </uix:NClick.VerifyOptions>
+              </uix:NClick>
+              <TryCatch DisplayName="Try Get Rating" sap:VirtualizedContainerService.HintSize="474,337" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                <TryCatch.Try>
+                  <Sequence DisplayName="Get Rating" sap:VirtualizedContainerService.HintSize="496,373" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:FindChildren DisplayName="Find Children - Rating Stats" Filter="&lt;webctrl tag='div'/&gt;&lt;webctrl tag='a'/&gt;" sap:VirtualizedContainerService.HintSize="434,119" sap2010:WorkflowViewState.IdRef="FindChildren_2" Scope="FIND_DESCENDANTS">
+                      <ui:FindChildren.Children>
+                        <OutArgument x:TypeArguments="scg:IEnumerable(ui:UiElement)">
+                          <CSharpReference x:TypeArguments="scg:IEnumerable(ui:UiElement)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_9">ratingElements</CSharpReference>
+                        </OutArgument>
+                      </ui:FindChildren.Children>
+                      <ui:FindChildren.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="edd10834-cabb-463d-8b23-b57b07632496" Selector="&lt;webctrl tag='div' data-auto='product-rating-stat' /&gt;">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                          <ui:Target.WaitForReady>
+                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                          </ui:Target.WaitForReady>
+                        </ui:Target>
+                      </ui:FindChildren.Target>
+                    </ui:FindChildren>
+                    <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="{x:Null}" DisplayName="For Each currentUiElement" sap:VirtualizedContainerService.HintSize="434,57" sap2010:WorkflowViewState.IdRef="ForEach`1_2">
+                      <ui:ForEach.Body>
+                        <ActivityAction x:TypeArguments="ui:UiElement">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="ui:UiElement" Name="currentUiElement" />
+                          </ActivityAction.Argument>
+                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="496,978" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                            <Sequence.Variables>
+                              <Variable x:TypeArguments="x:String" Name="rate" />
+                              <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="divElements" />
+                              <Variable x:TypeArguments="x:String" Name="reviewsCountText" />
+                            </Sequence.Variables>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:FindChildren DisplayName="Find Children - Divs" Filter="&lt;webctrl tag='div' /&gt;" sap:VirtualizedContainerService.HintSize="434,119" sap2010:WorkflowViewState.IdRef="FindChildren_3" Scope="FIND_CHILDREN">
+                              <ui:FindChildren.Children>
+                                <OutArgument x:TypeArguments="scg:IEnumerable(ui:UiElement)">
+                                  <CSharpReference x:TypeArguments="scg:IEnumerable(ui:UiElement)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_11">divElements</CSharpReference>
+                                </OutArgument>
+                              </ui:FindChildren.Children>
+                              <ui:FindChildren.Target>
+                                <ui:Target ClippingRegion="{x:Null}" Selector="{x:Null}" Id="71f739b0-e5ec-4f7c-bbe6-84e466221978">
+                                  <ui:Target.Element>
+                                    <InArgument x:TypeArguments="ui:UiElement">
+                                      <CSharpValue x:TypeArguments="ui:UiElement" sap2010:WorkflowViewState.IdRef="CSharpValue`1_15">currentUiElement</CSharpValue>
+                                    </InArgument>
+                                  </ui:Target.Element>
+                                  <ui:Target.TimeoutMS>
+                                    <InArgument x:TypeArguments="x:Int32" />
+                                  </ui:Target.TimeoutMS>
+                                  <ui:Target.WaitForReady>
+                                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                                  </ui:Target.WaitForReady>
+                                </ui:Target>
+                              </ui:FindChildren.Target>
+                            </ui:FindChildren>
+                            <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="data-rate" DisplayName="Get Attribute - Data Rate" sap:VirtualizedContainerService.HintSize="434,219" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_3" Version="V4">
+                              <uix:NGetAttributeGeneric.InUiElement>
+                                <InArgument x:TypeArguments="ui:UiElement">
+                                  <CSharpValue x:TypeArguments="ui:UiElement" sap2010:WorkflowViewState.IdRef="CSharpValue`1_16">divElements.ToList()[0]</CSharpValue>
+                                </InArgument>
+                              </uix:NGetAttributeGeneric.InUiElement>
+                              <uix:NGetAttributeGeneric.Result>
+                                <OutArgument x:TypeArguments="x:String">
+                                  <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_10">rate</CSharpReference>
+                                </OutArgument>
+                              </uix:NGetAttributeGeneric.Result>
+                            </uix:NGetAttributeGeneric>
+                            <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="text" DisplayName="Get Attribute - Reviews count" sap:VirtualizedContainerService.HintSize="434,219" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_4" Version="V4">
+                              <uix:NGetAttributeGeneric.InUiElement>
+                                <InArgument x:TypeArguments="ui:UiElement">
+                                  <CSharpValue x:TypeArguments="ui:UiElement" sap2010:WorkflowViewState.IdRef="CSharpValue`1_17">divElements.ToList()[1]</CSharpValue>
+                                </InArgument>
+                              </uix:NGetAttributeGeneric.InUiElement>
+                              <uix:NGetAttributeGeneric.Result>
+                                <OutArgument x:TypeArguments="x:String">
+                                  <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_13">reviewsCountText</CSharpReference>
+                                </OutArgument>
+                              </uix:NGetAttributeGeneric.Result>
+                            </uix:NGetAttributeGeneric>
+                            <Assign DisplayName="Match Reviews Count" sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_6">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:String">
+                                  <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_15">reviewsCountText</CSharpReference>
+                                </OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:String">
+                                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_19">System.Text.RegularExpressions.Regex.Match(reviewsCountText, @"\d+").Value</CSharpValue>
+                                </InArgument>
+                              </Assign.Value>
+                            </Assign>
+                            <Assign DisplayName="Build rate string" sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_5">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:String">
+                                  <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_14">rate</CSharpReference>
+                                </OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:String">
+                                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_20">reviewsCountText + " " + String.Concat(Enumerable.Repeat("⭐️", Convert.ToInt32(rate.Trim())))</CSharpValue>
+                                </InArgument>
+                              </Assign.Value>
+                            </Assign>
+                            <Assign DisplayName="Append rate string" sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_7">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:String">
+                                  <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_16">rateStatSummary</CSharpReference>
+                                </OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:String">
+                                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_21">rateStatSummary + rate + "\n"</CSharpValue>
+                                </InArgument>
+                              </Assign.Value>
+                            </Assign>
+                          </Sequence>
+                        </ActivityAction>
+                      </ui:ForEach.Body>
+                      <ui:ForEach.Values>
+                        <InArgument x:TypeArguments="sc:IEnumerable">
+                          <CSharpValue x:TypeArguments="sc:IEnumerable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_13">ratingElements</CSharpValue>
+                        </InArgument>
+                      </ui:ForEach.Values>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:ForEach>
+                    <Assign DisplayName="Add rateStat" sap:VirtualizedContainerService.HintSize="434,107" sap2010:WorkflowViewState.IdRef="Assign_8">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:Object">
+                          <CSharpReference x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpReference`1_17">io_currentRow["ReviewsDistribution"]</CSharpReference>
+                        </OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:Object">
+                          <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_24">rateStatSummary.Trim()</CSharpValue>
+                        </InArgument>
+                      </Assign.Value>
+                    </Assign>
+                  </Sequence>
+                </TryCatch.Try>
+                <TryCatch.Catches>
+                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="440,152" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ActivityAction x:TypeArguments="s:Exception">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                      </ActivityAction.Argument>
+                      <Assign DisplayName="Add details" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_9">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:Object">
+                            <CSharpReference x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpReference`1_19">io_currentRow["ReviewsDistribution"]</CSharpReference>
+                          </OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:Object">
+                            <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_26">"-"</CSharpValue>
+                          </InArgument>
+                        </Assign.Value>
+                      </Assign>
+                    </ActivityAction>
+                  </Catch>
+                </TryCatch.Catches>
+              </TryCatch>
+            </Sequence>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-1928, -8, 1936, 1048" BrowserType="Chrome" IconBase64="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" Selector="&lt;html app='chrome.exe' url='https://market.yandex.ru*' /&gt;" Title="Ноутбуки — купить по низкой цене на Яндекс Маркете" Url="https://market.yandex.ru*" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
