@@ -84,13 +84,13 @@
       <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="CloseTrigger" sap:VirtualizedContainerService.HintSize="416,570" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="CloseTrigger" sap:VirtualizedContainerService.HintSize="416,571" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ufa:FormTriggerActivity x:TypeArguments="ufa:FormInfoTriggerEventArgs" MessageId="{x:Null}" Tag="{x:Null}" DisplayName="Form Event Trigger" Enabled="True" Event="window.closed" FormId="390248d4-97d9-44f0-94b9-74b1a1f82b19" sap:VirtualizedContainerService.HintSize="354,191" sap2010:WorkflowViewState.IdRef="FormTriggerActivity`1_1" SchedulingMode="Sequential" TriggerId="dcd14ec7-d55f-4c0c-96a5-734c771790fd" />
+    <ufa:FormTriggerActivity x:TypeArguments="ufa:FormInfoTriggerEventArgs" MessageId="{x:Null}" Tag="{x:Null}" DisplayName="Form Event Trigger" Enabled="True" Event="window.closed" FormId="390248d4-97d9-44f0-94b9-74b1a1f82b19" sap:VirtualizedContainerService.HintSize="354,192" sap2010:WorkflowViewState.IdRef="FormTriggerActivity`1_1" SchedulingMode="Sequential" TriggerId="dcd14ec7-d55f-4c0c-96a5-734c771790fd" />
     <ui:StopTriggers DisplayName="Stop Local Triggers" sap:VirtualizedContainerService.HintSize="354,127" sap2010:WorkflowViewState.IdRef="StopTriggers_1">
       <ui:StopTriggers.ShouldStop>
         <OutArgument x:TypeArguments="x:Boolean">

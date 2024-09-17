@@ -4,7 +4,7 @@
     <x:Property Name="out_laptopLinkMetadataJObj" Type="OutArgument(njl:JObject)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1233,2213</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1234,2255</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -115,25 +115,25 @@
       <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="OpenMarket" sap:VirtualizedContainerService.HintSize="1112,2148" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="OpenMarket" sap:VirtualizedContainerService.HintSize="1112,2190" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Яндекс Маркет" sap:VirtualizedContainerService.HintSize="1050,2060" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" ScopeGuid="a8e1abfc-fc19-45d3-9726-e12c4028deaa" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Яндекс Маркет" sap:VirtualizedContainerService.HintSize="1050,2102" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" ScopeGuid="a8e1abfc-fc19-45d3-9726-e12c4028deaa" Version="V2" WindowResize="Maximize">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1016,1820" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1016,1862" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NCheckState DisplayName="Check App State 'Ноутбуки в Казани'" sap:VirtualizedContainerService.HintSize="954,1730" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="a8e1abfc-fc19-45d3-9726-e12c4028deaa" Timeout="15" Version="V4">
+            <uix:NCheckState DisplayName="Check App State 'Ноутбуки в Казани'" sap:VirtualizedContainerService.HintSize="954,1772" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="a8e1abfc-fc19-45d3-9726-e12c4028deaa" Timeout="15" Version="V4">
               <uix:NCheckState.IfExists>
                 <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,1490" sap2010:WorkflowViewState.IdRef="Sequence_3">
                   <Sequence.Variables>
@@ -179,10 +179,13 @@
                       <uix:TargetAnchorable BrowserURL="https://market.yandex.ru/" CVScreenId="bad615c0-adaf-471b-88f7-16876c97ff45" CvTextArea="62, 391, 87, 15" CvTextArgument="3nekTpoHnKa" CvType="Text" DesignTimeRectangle="35, 380, 226, 36" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='DIV' data-zone-name='catalog-content' /&gt;&lt;webctrl aaname='Электроника' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='DIV' data-zone-name='catalog-content' /&gt;&lt;webctrl aaname='Электроника' tag='A' type='' class='_3yHCR' check:text='Электроника' /&gt;" Guid="fe154c00-5aad-405f-86f7-97d1532deeda" InformativeScreenshot="993d8878fc01536c91275e23a34c87ad.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='*Яндекс Маркет*' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
                     </uix:NHover.Target>
                     <uix:NHover.VerifyOptions>
-                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                      <uix:VerifyExecutionOptions DisplayName="Label 'Электроника'" Mode="Appears">
                         <uix:VerifyExecutionOptions.Retry>
                           <InArgument x:TypeArguments="x:Boolean" />
                         </uix:VerifyExecutionOptions.Retry>
+                        <uix:VerifyExecutionOptions.Target>
+                          <uix:TargetAnchorable BrowserURL="https://market.yandex.ru/" DesignTimeRectangle="322, 247, 177, 36" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='DIV' aria-role='heading' /&gt;&lt;webctrl tag='A' aaname='Электроника' /&gt;" Guid="b20c95f9-b110-4d00-b030-3145f7703745" ImageBase64="" InformativeScreenshot="f1f5084906726a6e660d5f71bc7c3c46.png" ScopeSelectorArgument="&lt;html app='chrome.exe' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                        </uix:VerifyExecutionOptions.Target>
                         <uix:VerifyExecutionOptions.Timeout>
                           <InArgument x:TypeArguments="x:Double" />
                         </uix:VerifyExecutionOptions.Timeout>

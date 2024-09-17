@@ -1,2 +1,4 @@
 .*
 !/.gitignore
+Data/Out
+Data/Temp
